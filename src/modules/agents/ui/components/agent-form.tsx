@@ -19,6 +19,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
+import { useRouter } from "next/navigation";
 
 interface AgentFormProps {
     onSuccess?: () => void;
@@ -32,6 +33,7 @@ export const AgentForm = ({
     initialValues,
 }: AgentFormProps) => {
     const trpc = useTRPC();
+    const router = useRouter();
     const queryClient = useQueryClient();
 
     const createAgent = useMutation(
@@ -40,11 +42,18 @@ export const AgentForm = ({
                 await queryClient.invalidateQueries(
                     trpc.agents.getMany.queryOptions({}),
                 );
+                await queryClient.invalidateQueries(
+                    trpc.premium.getFreeUsage.queryOptions(),
+                );
 
                 onSuccess?.();
             },
             onError: (error) => {
                 toast.error(error.message);
+
+                if(error.data?.code === "FORBIDDEN") {
+                    router.push("/upgrade");
+                }
             },
         }),
     );

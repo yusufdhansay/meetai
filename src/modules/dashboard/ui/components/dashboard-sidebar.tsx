@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
 import { DashboardUserButton } from "./dashboard-user-button";
+import { DashboardTrial } from "./dashboard-trial";
 
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
@@ -112,6 +113,7 @@ export const DashboardSidebar = () => {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter className="text-white">
+                <DashboardTrial />
                 <DashboardUserButton />
             </SidebarFooter>
         </Sidebar>
