@@ -7,8 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { format } from "date-fns"
 import { cn, formatDuration } from "@/lib/utils"
 import { 
-    CornerDownRightIcon, 
-    VideoIcon,
+    CornerDownRightIcon,
     CircleCheckIcon,
     CircleXIcon,
     ClockArrowUpIcon,
