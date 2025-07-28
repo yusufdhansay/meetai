@@ -6,7 +6,6 @@ import { useTRPC } from "@/trpc/client";
 import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { MeetingIdViewHeader } from "../components/meeting-id-view-header";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
 import { useConfirm } from "../../hooks/use-confirm";
 import { useState } from "react";
 import { UpdateMeetingDialog } from "../components/update-meeting-dialog";

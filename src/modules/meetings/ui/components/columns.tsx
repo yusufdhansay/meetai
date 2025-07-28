@@ -8,7 +8,6 @@ import { format } from "date-fns"
 import { cn, formatDuration } from "@/lib/utils"
 import { 
     CornerDownRightIcon, 
-    VideoIcon,
     CircleCheckIcon,
     CircleXIcon,
     ClockArrowUpIcon,
